@@ -4,22 +4,30 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="navbar">
+        <h2>LittleHD</h2>
+
+        <div className="nav-links">
+          <a href="/">Home</a>
+          <a href="/">Shop</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+        </div>
+
+        <div className="nav-buttons">
+          <button>Login</button>
+          <button>Cart (0)</button>
+        </div>
+      </nav>
+
+      <main className="hero">
+        <h1>Welcome to LittleHD</h1>
+        <p>Your online shopping experience starts here.</p>
+        <button className="shop-button">Shop Now</button>
+      </main>
     </div>
   );
 }
 
 export default App;
+
