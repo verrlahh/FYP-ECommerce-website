@@ -172,7 +172,7 @@ const css = `
     padding: 96px 20px 48px;
     font-family: 'Poppins', system-ui, sans-serif;
     color: #111;
-    background: linear-gradient(to bottom, #c9ddff 0%, #eaf2ff 55%, #fbfcfe 100%);
+    background: #f5f0e1
 }
 .lhd-page *, .lhd-page *::before, .lhd-page *::after { box-sizing: border-box; }
 
