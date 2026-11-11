@@ -3,19 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 
 const isValidEmail = (email) => {
-    if (email.includes(' ')) return false;       // no spaces allowed
+    // no spaces allowed
+    if (email.includes(' ')) return false;
 
-    const parts = email.split('@');              // split at the @ sign
-    if (parts.length !== 2) return false;        // must have exactly one @
+    // split at the @ sign
+    const parts = email.split('@');            
+    // must have exactly one @
+    if (parts.length !== 2) return false;
 
-    const name = parts[0];                       // part before the @
-    const domain = parts[1];                     // part after the @
+    // part before the @
+    const name = parts[0];
+    // part after the @
+    const domain = parts[1];
 
-    if (name.length === 0) return false;         // something must come before @
-    if (!domain.includes('.')) return false;     // domain needs a dot
-    if (domain.endsWith('.')) return false;      // can't end with a dot
-    if (domain.startsWith('.')) return false;    // can't start with a dot
-
+    // something must come before @
+    if (name.length === 0) return false;
+    // domain needs a dot
+    if (!domain.includes('.')) return false;
+    // can't end with a dot
+    if (domain.endsWith('.')) return false;
+    // can't start with a dot
+    if (domain.startsWith('.')) return false;
     return true;
 };
 
@@ -62,7 +70,7 @@ const Login = () => {
     // Social sign-in: replace with your real OAuth flow (MSAL, Firebase, Auth0, etc.)
     const handleProvider = (provider) => {
         setError('');
-        setMessage(`Redirecting to ${provider}…`);
+        // setMessage(`Redirecting to ${provider}…`);
         // window.location.href = `/auth/${provider}`;
     };
 
