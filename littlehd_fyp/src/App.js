@@ -1,21 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import Login from './pages/Login';
 
-function App() {
+function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <nav className="navbar">
         <h2>LittleHD</h2>
 
         <div className="nav-links">
-          <a href="/">Home</a>
-          <a href="/">Shop</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/">Shop</Link>
+          <Link to="/">About</Link>
+          <Link to="/">Contact</Link>
         </div>
 
         <div className="nav-buttons">
-          <button>Login</button>
+          <button onClick={() => navigate('/login')}>Login</button>
           <button>Cart (0)</button>
         </div>
       </nav>
@@ -29,5 +32,15 @@ function App() {
   );
 }
 
-export default App;
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
+export default App;
